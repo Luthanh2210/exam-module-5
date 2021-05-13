@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Book management</title>
+
+
+</head>
+<html>
+<body>
+<h2><fa-icon style="float: left; margin-left: 10px" [icon]="faEdit"></fa-icon>Cập nhật thông tin sách:</h2>
+<br/>
+<br/>
+<form (ngSubmit)="updateBook()">
+  <table id="books" border="1">
+    <tbody>
+    <tr>Tên sách:
+      <br>
+      <td><input type="text" [(ngModel)]="book.title" name="title"></td>
+    </tr>
+    <tr>Tác giả:
+      <br>
+      <td><input type="text" [(ngModel)]="book.author" name="author"></td>
+    </tr>
+    <tr>Mô tả:
+      <br>
+      <td><textarea type="text" [(ngModel)]="book.description" name="description" style="height: 100px" ></textarea></td>
+    </tr>
+    </tbody>
+  </table>
+  <br/>
+  <div class="row">
+    <button type="submit" class="btn btn-primary" style="margin-right: 10px">Cập Nhật</button>
+    <button class="btn btn-success" [routerLink]="'/'">Thoát</button>
+  </div>
+
+</form>
+</body>
+</html>
+

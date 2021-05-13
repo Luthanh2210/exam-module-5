@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Book management</title>
+  <style type="text/css">
+    .alert-box {
+      color: #555;
+      border-radius: 10px;
+      font-family: Tahoma, Geneva, Arial, sans-serif;
+      font-size: 15px;
+      padding: 10px 10px 10px 36px;
+      margin: 10px;
+    }
+
+    .alert-box span {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .information {
+      background: #e3f7fc url('assets/img/information.png') no-repeat 10px 50%;
+      border: 1px solid #8ed9f6;
+    }
+  </style>
+</head>
+<html >
+<body>
+<div>
+  <h2><fa-icon style="float: left; margin-left: 10px" [icon]="faCoffee"></fa-icon><strong>Danh sách các cuốn sách</strong></h2>
+</div>
+
+
+<br/>
+<div>
+  <div class="alert-box information"> Có {{books.length}} cuốn sách.</div>
+  <button class="btn btn-success " [routerLink]="'/create'">Thêm sách mới</button>
+</div>
+
+
+<br/>
+<table id="books" border="1">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Tên Sách</th>
+    <th>Tác Giả</th>
+    <th>Mô tả</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let b of books">
+    <td>{{b.id}}</td>
+    <td>{{b.title}}</td>
+    <td>{{b.author}}</td>
+    <td>{{b.description}}</td>
+    <td style="text-align: center"><a [routerLink]="'detail/'+b.id">Thông tin</a></td>
+    <td><a [routerLink]="'edit/'+b.id">Sửa</a></td>
+    <td><a [routerLink]="'delete/'+b.id">Xoá</a></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

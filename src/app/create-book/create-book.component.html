@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Book management</title>
+
+</head>
+<html>
+<body>
+
+<h2> <fa-icon style="float: left; margin-left: 10px" [icon]="faPlusCircle "></fa-icon>Thêm sách mới </h2>
+<br/>
+<h3>Thêm Sách Mới:</h3>
+<br/>
+<br/>
+<form (ngSubmit)="createBook()">
+  <table id="books" border="1">
+    <thead>
+    <tr>
+      <th>Tên Sách</th>
+      <th>Tác Giả</th>
+      <th>Mô Tả</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><input type="text" [(ngModel)]="book.title" name="title"></td>
+      <td><input type="text" [(ngModel)]="book.author" name="author"></td>
+      <td><textarea type="text" [(ngModel)]="book.description" name="description" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' ></textarea></td>
+    </tr>
+    </tbody>
+  </table>
+  <br/>
+  <br/>
+  <div class="row">
+    <button type="submit" class="btn btn-primary" style="margin-right: 10px">Thêm sách</button>
+    <button class="btn btn-success" [routerLink]="'/'">Thoát</button>
+  </div>
+
+</form>
+</body>
+</html>
+

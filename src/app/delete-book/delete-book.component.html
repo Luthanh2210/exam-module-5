@@ -1,0 +1,40 @@
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Book management</title>
+</head>
+<body>
+<h2> <fa-icon style="float: left; margin-left: 10px" [icon]="faTrashAlt"></fa-icon>Xoá sách</h2>
+<br/>
+<br/>
+<h3>Thông tin sách</h3>
+<br/>
+<br/>
+
+<table id="books" border="1">
+  <thead>
+  <tr>
+    <th>Tên Sách</th>
+    <th>Tác Giả</th>
+    <th>Mô Tả</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{book.title}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.description}}</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<div class="row" >
+  <button class="btn btn-primary" (click)="deleteBook()" style="margin-right: 10px">Xoá</button>
+  <button class="btn btn-success" [routerLink]="'/'">Thoát</button>
+</div>
+
+</body>
+
+
